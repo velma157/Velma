@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Escolas Sustentáveis RN - Interativo</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 0; background: #e0f7fa; color: #004d40;
+  }
+  header {
+    background: linear-gradient(90deg, #ffca28, #f57f17);
+    padding: 40px 20px; text-align: center; color: #004d40;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  }
+  header h1 {
+    margin: 0 0 10px;
+    font-size: 2.5rem;
+  }
+  header p {
+    margin: 0; font-weight: 600; font-size: 1.1rem;
+  }
+  nav {
+    background: #00796b; display: flex; justify-content: center;
+    gap: 25px; padding: 15px 0;
+  }
+  nav a {
+    color: #a7ffeb; text-decoration: none;
+    font-weight: 700; font-size: 1rem;
+    padding: 8px 15px; border-radius: 8px;
+    transition: background 0.3s ease;
+  }
+  nav a:hover, nav a.active {
+    background: #004d40; color: #fff;
+  }
+  main {
+    max-width: 960px; margin: 30px auto; padding: 0 20px;
+  }
+  section {
+    margin-bottom: 50px;
+    background: #ffffffcc;
+    border-radius: 15px;
+    padding: 30px 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  h2 {
+    color: #00796b;
+    margin-bottom: 15px;
+  }
+  p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 18px;
+    margin-top: 20px;
+  }
+  .gallery img {
+    width: 100%; border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+  /* FAQ */
+  .faq h3 {
+    cursor: pointer;
+    background: #b2dfdb;
+    padding: 12px 18px;
+    border-radius: 8px;
+    margin-top: 15px;
+    user-select: none;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+  .faq h3:hover {
+    background: #004d40;
+    color: #fff;
+  }
+  .faq p {
+    display: none;
+    padding: 15px 20px;
+    background: #e0f2f1;
+    border-radius: 0 0 12px 12px;
+    margin-top: 0;
+  }
+  /* Form */
+  form {
+    display: flex; flex-direction: column; gap: 15px;
+  }
+  input, textarea {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 2px solid #00796b;
+    font-size: 1rem;
+    resize: vertical;
+  }
+  input:focus, textarea:focus {
+    border-color: #004d40;
+    outline: none;
+  }
+  button {
+    background: #00796b;
+    color: #a7ffeb;
+    font-weight: 700;
+    padding: 14px 0;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  button:hover {
+    background: #004d40;
+  }
+  /* Quiz */
+  .quiz-container {
+    margin-top: 20px;
+  }
+  .quiz-question {
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .quiz-options {
+    list-style: none;
+    padding: 0;
+  }
+  .quiz-options li {
+    margin-bottom: 10px;
+  }
+  .quiz-options label {
+    cursor: pointer;
+  }
+  .quiz-result {
+    margin-top: 15px;
+    font-weight: 700;
+  }
+  /* Chart */
+  #chartContainer {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  /* Responsive */
+  @media(max-width: 600px) {
+    nav {
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Escolas Sustentáveis do RN</h1>
+  <p>Energia Solar e Educação Ambiental Transformando o Futuro</p>
+</header>
+<nav>
+  <a href="#home" class="active">Home</a>
+  <a href="#solar">Energia Solar</a>
+  <a href="#educacao">Educação Ambiental</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#grafico">Gráfico</a>
+  <a href="#contato">Contato</a>
+</nav>
+
+<main>
+  <section id="home">
+    <h2>Bem-vindo ao Projeto</h2>
+    <p>Nosso objetivo é apoiar escolas do Rio Grande do Norte a adotarem práticas sustentáveis, com foco em energia solar e educação ambiental, inspirando alunos e comunidades.</p>
+    <div class="gallery" aria-label="Galeria de imagens sustentáveis">
+      <img src="https://source.unsplash.com/600x400/?solar,school" alt="Painel Solar em uma escola" tabindex="0" />
+      <img src="https://source.unsplash.com/600x400/?school,environment" alt="Escola sustentável e verde" tabindex="0" />
+      <img src="https://source.unsplash.com/600x400/?nature,classroom" alt="Sala de aula com educação ambiental" tabindex="0" />
+    </div>
+  </section>
+
+  <section id="solar">
+    <h2>Energia Solar nas Escolas</h2>
+    <p>Saiba como implementar energia solar para reduzir custos e ensinar sustentabilidade aos alunos.</p>
+    <ul>
+      <li>Benefícios econômicos e ambientais</li>
+      <li>Exemplos de escolas no RN que usam energia solar</li>
+      <li>Dicas de instalação e manutenção</li>
+    </ul>
+  </section>
+
+  <section id="educacao">
+    <h2>Educação Ambiental</h2>
+    <p>Transforme sua escola em um exemplo de cuidado ambiental com atividades práticas e educativas.</p>
+    <div class="faq" role="region" aria-live="polite">
+      <h3 tabindex="0">O que são projetos sustentáveis escolares?</h3>
+      <p>São ações que incentivam alunos e comunidade a cuidar do meio ambiente, como hortas, coleta seletiva e energia limpa.</p>
+      <h3 tabindex="0">Como envolver os alunos?</h3>
+      <p>Crie oficinas, gincanas e projetos interativos para que eles aprendam na prática.</p>
+    </div>
+  </section>
+
+  <section id="quiz">
+    <h2>Teste seus Conhecimentos</h2>
+    <div class="quiz-container" aria-live="polite" aria-atomic="true">
+      <div id="question"></div>
+      <ul id="options" class="quiz-options"></ul>
+      <button id="submitBtn" disabled>Responder</button>
+      <div id="quizResult" class="quiz-result"></div>
+    </div>
+  </section>
+
+  <section id="grafico">
+    <h2>Benefícios da Energia Solar nas Escolas</h2>
+    <canvas id="chartCanvas" width="600" height="400" aria-label="Gráfico de barras dos benefícios econômicos e ambientais"></canvas>
+  </section>
+
+  <section id="contato">
+    <h2>Entre em Contato</h2>
+    <form id="contactForm" aria-label="Formulário de contato">
+      <input type="text" placeholder="Nome" required aria-required="true" />
+      <input type="email" placeholder="Email" required aria-required="true" />
+      <textarea placeholder="Sua mensagem" rows="5" required aria-required="true"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <div id="formMessage" role="alert" style="margin-top:15px; font-weight:700; color:#004d40;"></div>
+  </section>
+</main>
+
+<footer>
+  <p style="text-align:center; padding: 20px 0; background:#004d40; color:#a7ffeb;">© 2025 Escolas Sustentáveis RN | Desenvolvido para Educação e Sustentabilidade</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  // Navegação ativa
+  const navLinks = document.querySelectorAll('nav a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      navLinks.forEach(l => l.classList.remove('active'));
+      e.target.classList.add('active');
+    });
+  });
+
+  // FAQ toggle
+  document.querySelectorAll('.faq h3').forEach(item => {
+    item.addEventListener('click', () => {
+      const p = item.nextElementSibling;
+      p.style.display = p.style.display === 'block' ? 'none' : 'block';
+    });
+    item.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        item.click();
+      }
+    });
+  });
+
+  // Quiz
+  const quizQuestions = [
+    {
+      question: 'Qual a principal fonte de energia usada nas escolas sustentáveis do RN?',
+      options: ['Energia solar', 'Energia eólica', 'Energia nuclear', 'Energia fóssil'],
+      answer: 0
+    },
+    {
+      question: 'Qual o principal benefício da energia solar?',
+      options: ['Reduz emissões de carbono', 'Aumenta o consumo de água', 'Polui o solo', 'Aumenta o custo de energia'],
+      answer: 0
+    },
+    {
+      question: 'O que é educação ambiental?',
+      options: ['Ensinar a cuidar do meio ambiente', 'Ignorar a natureza', 'Construir prédios grandes', 'Usar mais energia elétrica'],
+      answer: 0
+    }
+  ];
+
+  let currentQuestion = 0;
+  const questionEl = document.getElementById('question');
+  const optionsEl = document.getElementById('options');
+  const submitBtn = document.getElementById('submitBtn');
+  const quizResult = document.getElementById('quizResult');
+
+  function loadQuestion() {
+    quizResult.textContent = '';
+    submitBtn.disabled = true;
+    const q = quizQuestions[currentQuestion];
+    questionEl.textContent = q.question;
+    optionsEl.innerHTML = '';
+    q.options.forEach((opt, i) => {
+      const li = document.createElement('li');
+      const label = document.createElement('label');
+      label.textContent = opt;
+      const input = document.createElement('input');
+      input.type = 'radio';
+      input.name = 'option';
+      input.value = i;
+      input.addEventListener('change', () => submitBtn.disabled = false);
+      label.prepend(input);
+      li.appendChild(label);
+      optionsEl.appendChild(li);
+    });
+  }
+
+  submitBtn.addEventListener('click', () => {
+    const selected = document.querySelector('input[name="option"]:checked');
+    if (!selected) return;
+    const answer = parseInt(selected.value);
+    if (answer === quizQuestions[currentQuestion].answer) {
+      quizResult.textContent = 'Resposta correta! 🎉';
+      quizResult.style.color = 'green';
+    } else {
+      quizResult.textContent = 'Resposta errada. Tente novamente!';
+      quizResult.style.color = 'red';
+    }
+    currentQuestion++;
+    if (currentQuestion < quizQuestions.length) {
+      setTimeout(loadQuestion, 2000);
+    } else {
+      submitBtn.disabled = true;
+      questionEl.textContent = 'Você completou o quiz!';
+      optionsEl.innerHTML = '';
+      submitBtn.style.display = 'none';
+    }
+  });
+
+  loadQuestion();
+
+  // Gráfico com Chart.js
+  const ctx = document.getElementById('chartCanvas').getContext('2d');
+  const chart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Economia de Energia', 'Redução de Carbono', 'Conscientização Ambiental', 'Engajamento Escolar'],
+      datasets: [{
+        label: 'Benefícios (%)',
+        data: [75, 85, 70, 65],
+        backgroundColor: ['#ffca28', '#f57f17', '#4caf50', '#00796b']
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: { enabled: true }
+      },
+      scales: {
+        y: { beginAtZero: true, max: 100, ticks: { stepSize: 20 } }
+      }
+    }
+  });
+
+  // Formulário (simulado)
+  const form = document.getElementById('contactForm');
+  const formMsg = document.getElementById('formMessage');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    formMsg.style.color = '#004d40';
+    formMsg.textContent = 'Mensagem enviada com sucesso! Obrigado pelo contato.';
+    form.reset();
+    setTimeout(() => formMsg.textContent = '', 4000);
+  });
+</script>
+</body>
+</html>
